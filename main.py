@@ -12,6 +12,21 @@ def calculate_bmi(inches, weight):
     m_sq = (inches * 0.025) ** 2
     return kg / m_sq
 
+def print_category(final_bmi):
+    if(final_bmi >= 30.0):
+        # obese
+        print("Category: Obese")
+    elif(final_bmi >= 25.0):
+        # overweight
+        print("Category: Overweight")
+    elif(final_bmi >= 18.5):
+        # normal weight
+        print("Category: Normal Weight")
+    else:
+        # underweight
+        print("Category: Underweight")
+
+
 if __name__ == '__main__':
     while(1):
         # ask for height
@@ -39,7 +54,9 @@ if __name__ == '__main__':
             except ValueError:
                 print("Input not accepted. Please try again.")
                 continue
-            print("Your BMI is " + str(round(calculate_bmi(total_inches, int(user_input)))) + ".")
+            final_bmi = round(calculate_bmi(total_inches, int(user_input)))
+            print("Your BMI is " + str(final_bmi) + ".")
+            print_category(final_bmi)
             break
         break
 
