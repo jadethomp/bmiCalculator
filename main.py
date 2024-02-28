@@ -5,21 +5,28 @@
 # This assignment covers test-driven development (TDD), unit testing, and boundary testing.
 
 def ftin_to_in(feet, inches):
-    return inches + (feet * 12)
+    if(inches + (feet * 12)) > 0:
+        return inches + (feet * 12)
+    return -1
 
 def calculate_bmi(inches, weight):
     kg = weight * 0.45
     m_sq = (inches * 0.025) ** 2
-    return kg / m_sq
+    if(kg / m_sq) > 0:
+        return round(kg / m_sq, 2)
+    return -1
 
 def print_category(final_bmi):
-    if(final_bmi >= 30.0):
+    if(final_bmi <= 0.00):
+        print("Invalid BMI")
+        return
+    if(final_bmi >= 30.00):
         # obese
         print("Category: Obese")
-    elif(final_bmi >= 25.0):
+    elif(final_bmi >= 25.00):
         # overweight
         print("Category: Overweight")
-    elif(final_bmi >= 18.5):
+    elif(final_bmi >= 18.50):
         # normal weight
         print("Category: Normal Weight")
     else:
@@ -36,7 +43,7 @@ if __name__ == '__main__':
             print("Not enough values. Please try again.")
             continue
         try:
-            if(int(height_list[0]) < 0 or int(height_list[1]) < 0):
+            if(int(height_list[0]) <= 0 or int(height_list[1]) < 0):
                 print("Invalid height. Please try again.")
                 continue
         except ValueError:
@@ -54,7 +61,7 @@ if __name__ == '__main__':
             except ValueError:
                 print("Input not accepted. Please try again.")
                 continue
-            final_bmi = round(calculate_bmi(total_inches, int(user_input)))
+            final_bmi = calculate_bmi(total_inches, int(user_input))
             print("Your BMI is " + str(final_bmi) + ".")
             print_category(final_bmi)
             break
