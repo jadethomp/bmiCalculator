@@ -9,11 +9,10 @@ def test_ftin_to_in(ft_val, in_val, calcs):
 def test_calculate_bmi(total_in, weight_val, bmi_calcs):
     assert calculate_bmi(total_in, weight_val) == bmi_calcs
 
-@pytest.mark.parametrize("bmi, statement", [(16.00, "Category: Underweight"), (0.00, "Invalid BMI"), (0.50, "Category: Underweight"),
+@pytest.mark.parametrize("bmi, statement", [(16.00, "Category: Underweight"), (0.00, "Invalid inputs. Please try again."), (0.50, "Category: Underweight"),
                                              (21.00, "Category: Normal Weight"), (18.50, "Category: Normal Weight"), (18.49, "Category: Underweight"), 
                                              (27.00, "Category: Overweight"), (25.0, "Category: Overweight"), (24.90, "Category: Normal Weight"), 
                                              (35.00, "Category: Obese"), (30.00, "Category: Obese"), (29.90, "Category: Overweight")])
-def test_print_category(bmi, statement, capsys):
-    print_category(bmi)
-    captured_stdout, captured_stderr = capsys.readouterr()
-    assert captured_stdout.strip() == statement
+def test_print_category(bmi, statement):
+    get_category(bmi)
+    assert get_category(bmi) == statement
