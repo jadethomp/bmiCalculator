@@ -6,12 +6,18 @@ Python must be installed on your system to run this program. If you do not have 
 
 If you wish to run the unit tests included in this repository, you must have the Pytest testing framework installed. You can access instructions for installing Pytest at https://docs.pytest.org/en/7.1.x/getting-started.html .
 
+As of 3/25/24, this program now uses a GUI! This local web app uses the Flask web framework. Install Flask on your machine using this command:
+
+`pip install Flask`
+
+You must have pip installed for this command to work. If it is not installed, follow the OS-specific instructions at https://pip.pypa.io/en/stable/installation/ .
+
 # Running the Program
 On a system that has Python installed, navigate to the directory containing main.py in your local command line. Run the following command:
 
 `python3 main.py`
 
-While the program is running, follow the command prompts and input values when instructed.
+While the program is running, navigate to http://127.0.0.1:5000/ in your local browser. From here, you should be able to view and interact with the interface.
 
 To run the unit tests, navigate to the directory containing main.py and test_main.py. Run the following command:
 
