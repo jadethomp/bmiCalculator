@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="fancybox">
+        <h2 style="text-align: center;">What's my BMI?</h2>
+        <form id="bmiForm" action="/" method="post">
+
+            <label for="heightfeet">Height:</label>
+            <div class="inlineboxes">
+                <input class="shortboxes" type="text" id="heightfeet" name="heightfeet" placeholder="feet" required>
+                <input class="shortboxes" type="text" id="heightinches" name="heightinches" placeholder="inches" required>
+            </div>
+            
+            <label for="weight">Weight:</label>
+            <input class="wideboxes" type="text" id="weight" name="weight" placeholder="lbs" required>
+
+            <input class="submitbutton" type="submit" value="Let's Find Out!">
+        </form>
+        <div id="result">
+            <h3 id="BMI">{{ bmi }}</h3>
+            <h3 id="category">{{ category }}</h3>
+        </div>
+    </div>
+
+    <script>
+        if(document.getElementById("BMI").innerText == "-1"){
+            document.getElementById("BMI").style.display = "none";
+        }
+        if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+</body>
+</html>
