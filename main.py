@@ -34,10 +34,10 @@ def index():
         if bmi == 0:
             total_inches = ftin_to_in(int(heightft), int(heightin))
             bmi = calculate_bmi(total_inches, int(weightlbs))
-        return render_template('index.html', bmi=bmi, category=get_category(bmi))
+        return render_template('index.html', bmi=bmi, category=get_category(bmi), heightF=heightft, heightI=heightin, weight=weightlbs)
     else:
         # if no post request, just render blank form page
-        return render_template('index.html', data=[0, 0])
+        return render_template('index.html', bmi=-1, heightF="", heightI="", weight="")
 
 # calculates total inches from user-given feet and inches
 def ftin_to_in(feet, inches):

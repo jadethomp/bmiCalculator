@@ -13,12 +13,12 @@
 
             <label for="heightfeet">Height:</label>
             <div class="inlineboxes">
-                <input class="shortboxes" type="text" id="heightfeet" name="heightfeet" placeholder="feet" required>
-                <input class="shortboxes" type="text" id="heightinches" name="heightinches" placeholder="inches" required>
+                <input class="shortboxes" type="text" id="heightfeet" name="heightfeet" placeholder="feet" value="{{ heightF }}" required>
+                <input class="shortboxes" type="text" id="heightinches" name="heightinches" placeholder="inches" value="{{ heightI }}" required>
             </div>
             
             <label for="weight">Weight:</label>
-            <input class="wideboxes" type="text" id="weight" name="weight" placeholder="lbs" required>
+            <input class="wideboxes" type="text" id="weight" name="weight" placeholder="lbs" value="{{ weight }}" required>
 
             <input class="submitbutton" type="submit" value="Let's Find Out!">
         </form>
@@ -31,6 +31,7 @@
     <script>
         if(document.getElementById("BMI").innerText == "-1"){
             document.getElementById("BMI").style.display = "none";
+            document.getElementById("category").style.display = "none";
         }
         if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
