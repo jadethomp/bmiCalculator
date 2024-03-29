@@ -1,20 +1,21 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Tahoma, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #2A3D45;
+    background-color: #E3E3E3;
 }
 
 .fancybox {
-    background-color: white;
+    background-color: #7a7a7a;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 300px;
     height: 350px;
+    color: white;
 }
 
 .inlineboxes {
@@ -50,7 +51,7 @@ label {
 
 .submitbutton {
     padding: 10px 20px;
-    background-color: palevioletred;
+    background-color: #be8990;
     color: #fff;
     border: none;
     border-radius: 5px;
