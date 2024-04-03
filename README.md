@@ -1,6 +1,8 @@
 # About
 This program calculates a user's body mass index (BMI) based on provided height and weight. BMI category is also determined and provided.
 
+You can access the hosted version of this project at: http://jadethomp.pythonanywhere.com/
+
 # Dependencies
 Python must be installed on your system to run this program. If you do not have Python installed, access the latest version at https://www.python.org/downloads/ . Follow the website and installer's guidance for installation.
 
